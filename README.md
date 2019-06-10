@@ -53,6 +53,25 @@ Auxiliary type identifiers used in output filenames:
 * nlcd = NLCD
 * eroded nlcd = NLCDTRN
 
+```bash
+usage: main.py [-h] -i INDIR -o OUTDIR
+               [-aux ['aspect', 'slope', 'posidex', 'dem', 'trends', 'mpw']]
+               [-hv HH 0-32 VV 0-21]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INDIR, --input INDIR
+                        Full path to the directory containing the CONUS
+                        ancillary data products
+  -o OUTDIR, --output OUTDIR
+                        Full path to the output location
+  -aux ['aspect', 'slope', 'posidex', 'dem', 'trends', 'mpw']
+                        Specify the product to clip, if no product is selected
+                        then all products will be clipped
+  -hv HH 0-32 VV 0-21   Horizontal and vertical ARD grid identifiers. WARNING:
+                        if no chip identifier is supplied all 726 chips will
+                        be processed!
+```
 
 
 
