@@ -129,11 +129,11 @@ def main():
     parser.add_argument("-o", "--output", dest="outdir", type=str, required=True,
                       help="Full path to the output location")
 
-    parser.add_argument("-aux", dest="aux", type=str, required=False, choices = all_aux,
+    parser.add_argument("--aux", dest="aux", type=str, required=False, choices = all_aux,
                         metavar=all_aux,
                         help="Specify the product to clip, if no product is selected then all products will be clipped")
 
-    parser.add_argument('-hv', dest="hv", nargs=2, type=str, required=False,
+    parser.add_argument('--hv', dest="hv", nargs=2, type=str, required=False,
                         metavar=('HH 0-32', 'VV 0-21'),
                         help='Horizontal and vertical ARD grid identifiers.  ' \
                              'WARNING:  if no chip identifier is supplied all'

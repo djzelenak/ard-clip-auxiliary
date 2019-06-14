@@ -65,10 +65,10 @@ optional arguments:
                         ancillary data products
   -o OUTDIR, --output OUTDIR
                         Full path to the output location
-  -aux ['aspect', 'slope', 'posidex', 'dem', 'trends', 'mpw']
+  --aux ['aspect', 'slope', 'posidex', 'dem', 'trends', 'mpw']
                         Specify the product to clip, if no product is selected
                         then all products will be clipped
-  -hv HH 0-32 VV 0-21   Horizontal and vertical ARD grid identifiers. WARNING:
+  --hv HH 0-32 VV 0-21   Horizontal and vertical ARD grid identifiers. WARNING:
                         if no chip identifier is supplied all 726 chips will
                         be processed!
 ```
