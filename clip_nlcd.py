@@ -108,14 +108,14 @@ def cli():
                         metavar=('HH (0-32)', 'VV (0-21)'), default=None,
                         help='Specify a single tile to process')
 
-    parser.add_argument('--row', nargs=2, type=int, required=False,
-                        metavar=('HH (0-21)'), default=(0, 21),
-                        help='Horizontal grid range to process - must use 2 values - if a single row '
+    parser.add_argument('--hh', nargs=2, type=int, required=False,
+                        metavar=('HH (0-32)'), default=(0, 32),
+                        help='Horizontal grid range to process - must use 2 values - if a single col '
                              'then use the same value twice')
 
-    parser.add_argument('--col', nargs=2, type=int, required=False,
-                        metavar=('VV (0-32)'), default=(0, 32),
-                        help='Vertical grid range to process - must use 2 values - if a single column '
+    parser.add_argument('--vv', nargs=2, type=int, required=False,
+                        metavar=('VV (0-21)'), default=(0, 21),
+                        help='Vertical grid range to process - must use 2 values - if a single row '
                              'then use the same value twice')
 
     args = parser.parse_args()
@@ -125,15 +125,15 @@ def cli():
     return None
 
 
-def main(input, output, name, hv=None, row=None, col=None):
+def main(input, output, name, hv=None, vv=None, hh=None):
 
-    if (hv and row) or (hv and col):
+    if (hv and hh) or (hv and vv):
         print("Invalid args: a single HV tile was specified along with a row and/or column range")
         sys.exit(0)
 
     if not (hv):
         # Specific row/column range(s)
-        tiles = get_hv_list(h_list=row, v_list=col)
+        tiles = get_hv_list(h_list=hh, v_list=vv)
     else:
         # A single tile
         tiles = get_hv_list(h_list=(hv[0], hv[0]), v_list=(hv[1], hv[1]))
